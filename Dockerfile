@@ -2,7 +2,7 @@
 FROM node:8.11-slim
 
 # Maintainer information
-LABEL maintainer="Mahesh Kumar Gangula <mahesh@ilimi.in>"
+LABEL maintainer="Muzaffar khan <muzafferjoya@gmail.com>"
 
 # Switch to root user to perform installations
 USER root
