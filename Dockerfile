@@ -27,7 +27,6 @@ RUN apt-get update && apt-get install -y \
     && echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list \
     && apt-get update && apt-get install -y \
     google-chrome-stable \
-    ... # Rest of the packages remain the same
     && rm -rf /var/lib/apt/lists/*
 
 # Create a non-root user for running the service
