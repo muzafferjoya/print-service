@@ -22,6 +22,7 @@ RUN apt-get update && apt-get install -y \
     apt-transport-https \
     fonts-indic \
     gnupg \
+    ca-certificates \
     --no-install-recommends \
     && wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb \
     && apt-get install -y ./google-chrome-stable_current_amd64.deb \
@@ -38,15 +39,6 @@ RUN fc-cache -f -v
 
 # Switch back to non-root user
 USER sunbird
-
-# Copy the source code from the build stage
-COPY --from=build --chown=sunbird /opt/print-service/ /home/sunbird/print-service/
-
-# Set working directory
-WORKDIR /home/sunbird/print-service/
-
-# Create a directory for certificates
-RUN mkdir /home/sunbird/print-service/certs
 
 # Set environment variable
 ENV NODE_ENV production
